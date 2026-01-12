@@ -27,5 +27,8 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
 	List<Produit> findBycategorieIdCat(Long id);
 	
 	List<Produit> findByOrderByNomProduitAsc();
+	
+	@Query("select p from Produit p order by p.nomProduit ASC, p.prixProduit ASC")
+	List<Produit> trierProduitsNomsPrix ();
 
 }
