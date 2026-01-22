@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,6 +53,12 @@ public class ProduitRESTController {
 	@PostMapping()
 	public Produit createProduit(@RequestBody Produit produit) {
 	return produitService.saveProduit(produit);
+	}
+	
+	//@RequestMapping(method = RequestMethod.PUT)
+	@PutMapping()
+	public Produit updateProduit(@RequestBody Produit produit) {
+	return produitService.updateProduit(produit);
 	}
 
 }
